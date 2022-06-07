@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+....**
+-->
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Nueva Subject</title>
+  <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../../node_modules/designmodo-flat-ui/dist/css/flat-ui.min.css">
+</head>
+
+<body class="d-flex flex-column">
+  <!-- Draggable bar -->
+  <div class="draggable palette-midnight-blue text-light text-center">
+    New Subject
+
+    <div class="btn-group float-right h-100">
+      <!-- Close button -->
+      <button class="btn btn-danger btn-sm rounded-0 p-1" onclick="closeForm()">
+        <span class="fui-cross"></span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Begining of the form -->
+  <div id="new-db-subject-form" class="w-100 flex overflow-y-scroll border border-primary">
+
+    <div class="form-group px-3 mb-2">
+      <!-- Code of the subject -->
+      <div class="text-small">Code</div>
+      <input type="text" name="Code" class="form-control w-100" required/>
+    </div>
+
+    <div class="form-group px-3 mb-2">
+      <!-- Name of the subject -->
+      <div class="text-small">Subject</div>
+      <input type="text" name="Subject" class="form-control w-100" required/>
+    </div>
+
+    <div class="form-group px-3 mb-2">
+      <!-- Program (Undergraduate or Postgraduate) -->
+      <div class="text-small">Program</div>
+      <select name="Program" class="form-control w-100">
+        <option value="Under Graduate">Under Graduate</option>
+        <option value="Post Graduate">Post Graduate</option>
+      </select>
+    </div>
+
+    <div class="form-group px-3 mb-2">
+      <!-- University -->
+      <div class="text-small">College</div>
+      <input type="text" name="College" class="form-control w-100" required/>
+    </div>
+
+    <div class="form-group px-3 mb-2">
+      <!-- Campus -->
+      <div class="text-small">Place</div>
+      <input type="text" name="Place" class="form-control w-100" required/>
+    </div>
+
+    <div class="form-group px-3 mb-2">
+      <!-- School / Area -->
+      <div class="text-small">Faculty</div>
+      <input type="text" name="Faculty" class="form-control w-100" required/>
+    </div>
+
+    <div class="form-group px-3 mb-2">
+      <!-- Department -->
+      <div class="text-small">Department</div>
+      <input type="text" name="Department" class="form-control w-100" required/>
+    </div>
+
+    <div class="form-group px-3 mb-2">
+      <!-- Number of Credits -->
+      <div class="text-small">Credits</div>
+      <input type="number" name="Credits" class="form-control w-100" min="1" max="100" required/>
+    </div>
+
+    <input class="btn btn-success mx-3 px-1 my-4 w-50 text-medium"
+    type="submit" name="Accept" value="Accept" onclick="newDbSubject()"/>
+
+  </div>
+
+  <!-- Submit function -->
+  <script src="../js/forms.js"></script>
+  <script src="js/newDbSubject.js"></script>
+</body>
+
+</html>

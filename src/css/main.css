@@ -1,0 +1,172 @@
+/**/
+
+body, html {
+  height: 100%;
+  overflow: hidden;
+}
+
+
+/* Draggable configuration*/
+
+.draggable {
+  -webkit-app-region: drag;
+}
+
+.btn {
+  -webkit-app-region: no-drag;
+}
+
+
+/* Font Sizes */
+
+.text-tiny {
+  font-size: 10px !important;
+}
+
+.text-small {
+  font-size: 12px !important;
+}
+
+.text-medium {
+  font-size: 15px !important;
+}
+
+.text-large {
+  font-size: 18px !important;
+}
+
+.text-xlarge {
+  font-size: 24px !important;
+}
+
+.text-xxlarge {
+  font-size: 36px !important;
+}
+
+.text-xxxlarge {
+  font-size: 48px !important;
+}
+
+.text-jumbo {
+  font-size: 64px !important;
+}
+
+.text-extra-jumbo {
+  font-size: 100px !important;
+}
+
+
+/* Overflow */
+
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.overflow-x-scroll {
+  overflow-x: scroll;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+
+/* Flex */
+
+.flex {
+  flex: 1;
+}
+
+
+.no-flex {
+  flex: 0;
+}
+
+
+/* Cursor */
+
+.pointer {
+  cursor: pointer;
+}
+
+
+/* Widths */
+
+.w-10 {
+  width: 10% !important;
+}
+
+.w-20 {
+  width: 20% !important;
+}
+
+.w-80 {
+  width: 80% !important;
+}
+
+.w-90 {
+  width: 90% !important;
+}
+
+.w-130-px {
+  width: 130px !important;
+}
+
+
+/* Heights */
+
+.h-20 {
+  height: 20% !important;
+}
+
+.h-80 {
+  height: 80% !important;
+}
+
+.h-130-px {
+  height: 130px !important;
+}
+
+/* Displays */
+
+.d-inline-table {
+  display: inline-table;
+}
+
+
+/* Forms */
+
+.form-control {
+  height: 35px !important;
+  padding: 0 12px !important;
+}
+
+
+/* Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  height: 7px;
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ecf0f1;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #27ae60;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2ecc71;
+}

@@ -1,0 +1,42 @@
+/**/
+
+/* calendar containter */
+
+.calendar {
+  position: relative;
+}
+
+.hours {
+  display: block;
+  padding-top: 50px;
+  position: absolute;
+}
+
+.hours ul li{
+  border: 0.5px solid;
+  border-color: #ddd;
+  height: 50px;
+  padding-left: 20px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.events {
+  box-sizing: border-box !important;
+  height: calc(50px * 17);
+  padding-left: 100px;
+  position: relative;
+}
+
+.events ul li {
+  border: 0.5px solid;
+  border-color: #ddd;
+}
+
+.events ul li ul li{
+  position: absolute;
+}

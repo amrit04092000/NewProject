@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>¡Bienvenido!</title>
+  <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../node_modules/designmodo-flat-ui/dist/css/flat-ui.min.css">
+</head>
+
+<body>
+
+  <!-- Draggable bar -->
+  <div class="draggable pb-4 mb-4 palette-midnight-blue"></div>
+
+  <!-- App icon -->
+  <div class="text-center mb-5">
+    <h1 class="m-0">S3M</h1>
+  </div>
+
+  <!-- Main menu -->
+  <div class="text-center">
+    <!-- New mesh button -->
+    <button id="NEW" class="btn btn-primary mb-3 btn-lg"> New Schedule </button>
+    <br>
+
+    <!-- Load mesh button -->
+    <button id="OPEN" class="btn btn-primary mb-5 btn-lg"> Load Schedule </button>
+    <br>
+
+    <!-- Settings button -->
+    <button id="SETTINGS" class="btn btn-primary btn-lg">
+      <span class="fui-gear"></span>
+    </button>
+
+    <!-- Exit button -->
+    <button id="EXIT" class="btn btn-danger btn-lg">
+      <span class="fui-exit"></span>
+    </button>
+  </div>
+
+  <script src="js/buttons.js"></script>
+  <script src="js/home.js"></script>
+</body>
+
+</html>

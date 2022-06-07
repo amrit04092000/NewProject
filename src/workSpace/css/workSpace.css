@@ -1,0 +1,31 @@
+/**/
+
+/* Tabs bar appearance and mouse events */
+
+.nav-link {
+  padding: 0.1rem 24px !important;
+}
+
+
+/* Tools */
+
+.tool {
+  padding: 2px;
+  width: 18px;
+}
+
+
+/* Status bar */
+
+.status-bar {
+  background: #B7F5E9;
+}
+
+
+/* Special buttons */
+
+.edit-button {
+  padding: 3px;
+  margin: 3px;
+  width: 24px;
+}

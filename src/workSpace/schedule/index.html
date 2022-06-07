@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--
+....**
+-->
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>¡Bienvenido!</title>
+
+  <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/schedule.css">
+  <link rel="stylesheet" href="../css/workSpace.css">
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../../node_modules/designmodo-flat-ui/dist/css/flat-ui.min.css">
+</head>
+
+<body class="d-flex flex-column">
+
+  <!-- Draggable bar -->
+  <div class="draggable palette-midnight-blue btn-toolbar">
+    <div class="text-light ml-auto">
+      S3M
+    </div>
+
+    <div class="btn-group ml-auto">
+
+      <!-- Iconize button -->
+      <button id="ICONIZE" class="btn btn-warning btn-sm rounded-0 p-1">
+        <span class="fui-triangle-down-small"></span>
+      </button>
+
+      <!-- Maximize button -->
+      <button id="MAXIMIZE" class="btn btn-primary btn-sm rounded-0 p-1">
+        <span class="fui-windows"></span>
+      </button>
+
+      <!-- Close button -->
+      <button id="CLOSE" class="btn btn-danger btn-sm rounded-0 p-1">
+        <span class="fui-cross"></span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Tabs bar -->
+  <ul class="nav nav-tabs user-select-none palette-clouds text-medium">
+    <li class="nav-item">
+      <a href="../subjects/index.html"
+      class="nav-link border-0 rounded-0">Subject Groups</a>
+    </li>
+
+    <li class="nav-item">
+      <a href="../planning/index.html"
+      class="nav-link border-0 rounded-0">Planning</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link border-0 rounded-0 active bg-primary text-light">Semester</a>
+    </li>
+  </ul>
+
+  <!-- Tool bar -->
+  <div class="user-select-none palette-clouds btn-toolbar">
+    <div class="btn-group mr-2">
+
+      <button id="FILE-NEW" class="btn btn-primary btn-sm rounded-0 p-1">
+        <img src="../../assets/new-icon.svg" class="tool">
+      </button>
+
+      <button id="FILE-OPEN" class="btn btn-primary btn-sm rounded-0 p-1">
+        <img src="../../assets/open-icon.svg" class="tool">
+      </button>
+
+      <button id="FILE-SAVE" class="btn btn-primary btn-sm rounded-0 p-1">
+        <img src="../../assets/save-icon.svg" class="tool">
+      </button>
+
+    </div>
+
+    <div class="btn-group">
+
+      <button id="ADD-SEMESTER" class="btn btn-primary btn-sm rounded-0 p-1">
+        <img src="../../assets/calendar-icon.svg" class="tool">
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Work space of the semesters table -->
+
+    <!-- Work space of the semesters table -->
+    <div id="schedule-table" class="w-100 flex overflow-y-scroll overflow-x-scroll d-flex">
+
+      <div id="calendar" class="w-100 calendar">
+
+        <div class="hours w-100 h-100">
+          <ul>
+            <li>6:00</li>
+            <li>7:00</li>
+            <li>8:00</li>
+            <li>9:00</li>
+            <li>10:00</li>
+            <li>11:00</li>
+            <li>12:00</li>
+            <li>13:00</li>
+            <li>14:00</li>
+            <li>15:00</li>
+            <li>16:00</li>
+            <li>17:00</li>
+            <li>18:00</li>
+            <li>19:00</li>
+            <li>20:00</li>
+            <li>21:00</li>
+          </ul>
+        </div>
+
+        <div class="events w-100">
+
+          <ul class="d-flex w-100 h-100 text-center">
+            <li class="flex">
+              Monday
+
+              <ul id="Monday" class="h-100"></ul>
+
+            </li>
+            <li class="flex">
+              Tuesday
+
+              <ul id="Tuesday" class="h-100"></ul>
+
+            </li>
+            <li class="flex">
+              Wednesday
+
+              <ul id="Wednesday" class="h-100"></ul>
+
+            </li>
+            <li class="flex">
+              Thursday
+
+              <ul id="Thursday" class="h-100"></ul>
+
+            </li>
+            <li class="flex">
+              Friday
+
+              <ul id="Friday" class="h-100"></ul>
+
+            </li>
+            <li class="flex">
+              Saturday
+
+              <ul id="Saturday" class="h-100"></ul>
+
+            </li>
+            <li class="flex">
+              Sunday
+
+              <ul id="Sunday" class="h-100"></ul>
+
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  <div id="status-bar" class="status-bar palette-peter-river text-small
+  text-light pl-2">Listo</div>
+
+  <!-- Script to handle the events -->
+  <script src="../../js/buttons.js"></script>
+  <script src="../js/workSpace.js"></script>
+  <script src="js/schedule.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+{
+  "name": "sem",
+  "productName": "S3M",
+  "version": "0.2.2-Beta",
+  "description": "A grade curriculum schedule manager",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "lint": "echo \"No linting configured\"",
+    "bsqlt3": "electron-rebuild -f -w sqlite3",
+    "test": "electron .",
+    "postinstall": "electron-builder install-app-deps",
+    "pack": "electron-builder --dir",
+    "dist-win": "electron-builder --win --publish=never",
+    "dist-linux": "electron-builder --linux deb rpm --publish=never",
+    "dist-mac": "electron-builder --mac --publish=never",
+    "dist-pacman": "electron-builder --linux pacman"
+  },
+  "build": {
+    "appId": "ustair",
+    "mac": {
+      "category": "public.app-category.education",
+      "target": [
+        "dmg"
+      ]
+    },
+    "mas": {
+      "hardenedRuntime": false,
+      "entitlements": "build/entitlements.mas.plist",
+      "entitlementsInherit": "build/entitlements.mas.inherit.plist",
+      "gatekeeperAssess": false,
+      "asarUnpack": []
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm",
+        "pacman"
+      ],
+      "category": "Productivity",
+      "icon": "src/assets/icon.png",
+      "maintainer": "afmorenosa"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "src/assets/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "license": "LICENSE",
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "src/assets/icon_i.ico",
+      "uninstallerIcon": "src/assets/icon_u.ico"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afmorenosa/U_Stair.git"
+  },
+  "keywords": [
+    "Universitary",
+    "Schedule",
+    "Grade"
+  ],
+  "author": "Andŕes Felipe Moreno Sarria <afmorenosa@unal.edu.co>",
+  "email": "afmorenosa@unal.edu.co",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/afmorenosa/U_Stair/issues"
+  },
+  "homepage": "https://github.com/afmorenosa/U_Stair#readme",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "a"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.54",
+    "@electron-forge/maker-deb": "^6.0.0-beta.54",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
+    "@electron-forge/maker-zip": "^6.0.0-beta.54",
+    "cross-env": "^7.0.3",
+    "electron": "^9.3.4",
+    "electron-builder": "^22.9.1",
+    "electron-rebuild": "^2.3.4"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "designmodo-flat-ui": "^2.3.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "fs-extra": "^9.0.1",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
+    "sqlite3": "^5.0.0"
+  }
+}

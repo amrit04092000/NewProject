@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--
+....**
+-->
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>¡Bienvenido!</title>
+  <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../css/workSpace.css">
+  <link rel="stylesheet" href="css/subjects.css">
+  <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../../node_modules/designmodo-flat-ui/dist/css/flat-ui.min.css">
+</head>
+
+<body class="d-flex flex-column">
+
+  <!-- Draggable bar -->
+  <div class="draggable palette-midnight-blue btn-toolbar">
+    <div class="text-light ml-auto">
+      S3M
+    </div>
+
+    <div class="btn-group ml-auto">
+
+      <!-- Iconize button -->
+      <button id="ICONIZE" class="btn btn-warning btn-sm rounded-0 p-1">
+        <span class="fui-triangle-down-small"></span>
+      </button>
+
+      <!-- Maximize button -->
+      <button id="MAXIMIZE" class="btn btn-primary btn-sm rounded-0 p-1">
+        <span class="fui-windows"></span>
+      </button>
+
+      <!-- Close button -->
+      <button id="CLOSE" class="btn btn-danger btn-sm rounded-0 p-1">
+        <span class="fui-cross"></span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Tabs bar -->
+  <ul class="nav nav-tabs user-select-none palette-clouds text-medium">
+    <li class="nav-item">
+      <a class="nav-link border-0 rounded-0 active bg-primary text-light">Subject Groups</a>
+    </li>
+
+    <li class="nav-item">
+      <a href="../planning/index.html"
+      class="nav-link border-0 rounded-0">Planning</a>
+    </li>
+
+    <li class="nav-item">
+      <a href="../schedule/index.html"
+      class="nav-link border-0 rounded-0">Semester</a>
+    </li>
+  </ul>
+
+  <!-- Tool bar -->
+  <div class="user-select-none palette-clouds btn-toolbar">
+    <div class="btn-group mr-2">
+
+      <button id="FILE-NEW" class="btn btn-primary btn-sm rounded-0 p-1">
+        <img  src="../../assets/new-icon.svg" class="tool">
+      </button>
+
+      <button id="FILE-OPEN" class="btn btn-primary btn-sm rounded-0 p-1">
+        <img src="../../assets/open-icon.svg" class="tool">
+      </button>
+
+      <button id="FILE-SAVE" class="btn btn-primary btn-sm rounded-0 p-1">
+        <img src="../../assets/save-icon.svg" class="tool">
+      </button>
+
+    </div>
+
+    <div class="btn-group">
+
+      <button id="NEW-DB-SUBJECT" class="btn btn-primary btn-sm rounded-0 p-1">
+        <img src="../../assets/plus-icon.svg" class="tool">
+      </button>
+
+      <button id="REFRESH-SUBJECT" class="btn btn-primary btn-sm rounded-0 p-1">
+        <img src="../../assets/refresh-icon.svg" class="tool">
+      </button>
+
+      <button id="DELETE-SELECTED-SUBJECT" class="btn btn-danger btn-sm rounded-0 p-1" onclick="deleteItems()">
+        <img src="../../assets/delete-icon.svg" class="tool">
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Work space of the subject table -->
+  <div class="w-100 flex overflow-auto">
+
+    <!-- Table with all the subjects in the database -->
+    <div class="w-75 h-100 p-0 m-0 float-left border-right
+    overflow-x-scroll bg-white">
+
+      <table id="DATABASE-TABLE" class="w-100 text-center text-medium">
+
+        <thead class="palette-wet-asphalt text-light">
+          <tr>
+            <th class="py-1" scope="col"></th>
+            <th class="py-1" scope="col">Code</th>
+            <th class="py-1" scope="col">Name</th>
+            <th class="py-1" scope="col">Credits</th>
+            <th class="py-1" scope="col">College</th>
+            <th class="py-1" scope="col">Place</th>
+            <th class="py-1" scope="col">Faculty</th>
+            <th class="py-1" scope="col">Department</th>
+            <th class="py-1" scope="col">Program</th>
+            <th class="py-1" scope="col"></th>
+          </tr>
+        </thead>
+
+      </table>
+
+    </div>
+
+    <!-- Filter of the table -->
+    <div class="w-25 h-100 d-flex flex-column p-0 m-0 float-left bg-white no-flex">
+
+      <div class="palette-wet-asphalt">
+
+        <p class="text-light text-medium py-1 m-0 text-center">
+          Filter
+        </p>
+
+      </div>
+
+      <form id="filter" class="overflow-auto pt-3 flex">
+
+        <div class="form-group ml-3 mb-2">
+          <label class="mb-1 p-0" for="materia">Name or Code</label>
+          <input id="materia" class="form-control w-75 m-0" type="text">
+        </div>
+
+        <div class="form-group ml-3 mb-2">
+          <label class="mb-1 p-0" for="College">College</label>
+          <input id="College" class="form-control w-75 m-0" type="text">
+        </div>
+
+        <div class="form-group ml-3 mb-2">
+          <label class="mb-1 p-0" for="sede">Place</label>
+          <input id="sede" class="form-control w-75 m-0" type="text">
+        </div>
+
+        <div class="form-group ml-3 mb-2">
+          <label class="mb-1 p-0" for="facultad">Faculty</label>
+          <input id="facultad" class="form-control w-75 m-0" type="text">
+        </div>
+
+        <div class="form-group ml-3 mb-2">
+          <label class="mb-1 p-0" for="departamento">Department</label>
+          <input id="departamento" class="form-control w-75 m-0" type="text">
+        </div>
+
+        <div class="form-group ml-3 mb-2">
+          <label class="mb-1 p-0" for="programa">Program</label>
+          <select id="programa" class="form-control w-75 m-0">
+            <option value="Under Graduate">Under Graduate</option>
+            <option value="Post Graduate">Post Graduate</option>
+          </select>
+        </div>
+
+        <div class="form-group ml-3 mb-2">
+          <label class="mb-1 p-0" for="creditos">Credits</label>
+          <input id="creditos" class="form-control w-50" type="number" min="1" max="50">
+        </div>
+
+      </form>
+      <button class="btn btn-success ml-3 my-4 w-50 text-medium"
+      onclick="applyFilter()">Search</button>
+
+
+    </div>
+  </div>
+
+  <div id="status-bar" class="status-bar palette-peter-river text-small
+  text-light pl-2">Listo</div>
+
+  <!-- Script to handle the events -->
+  <script src="../../js/buttons.js"></script>
+  <script src="../js/workSpace.js"></script>
+  <script src="js/subjects.js"></script>
+  <script src="js/filter.js"></script>
+</body>
+
+</html>
