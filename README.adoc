@@ -1,8 +1,4 @@
-image:https://github.com/afmorenosa/U_Stair/workflows/Linux/badge.svg[]
-image:https://github.com/afmorenosa/U_Stair/workflows/Windows/badge.svg[]
-image:https://github.com/afmorenosa/U_Stair/workflows/Mac/badge.svg[]
 
-= U Stair
 
 Application for organizing the curriculum for university programs.
 
